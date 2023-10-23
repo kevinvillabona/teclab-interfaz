@@ -1,22 +1,19 @@
-let containerCards = document.getElementById("containerCards")
-containerCards.innerHTML = "";
+const containerCards = document.getElementById("containerCards")
+
 
 const retornarCardHTML = (producto) => {
-    return `
+    return `<div class="card">
     <div class="card-image">${producto.imagen}</div>
     <div class="card-name">${producto.nombre}</div>
     <div class="card-price">$ ${producto.precio}</div>
     <div class="card-button">
         <button class="button button-outline button-add" id="" title="Clic para agregar al carrito">+</button>
-    </div>`
+    </div></div>`
 }
 
 const cargarProductos = (array) =>{
     array.forEach(element => {
-        const card = document.createElement("div");
-        card.classList.add("card");
-        card.innerHTML = retornarCardHTML(element)
-        containerCards.appendChild(card)
+        containerCards.innerHTML += retornarCardHTML(element)
     });
 }
 
