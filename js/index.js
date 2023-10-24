@@ -1,5 +1,4 @@
-const containerCards = document.getElementById("containerCards")
-
+const containerCards = document.querySelector(".container")
 
 const retornarCardHTML = (producto) => {
     return `<div class="card">
@@ -7,13 +6,13 @@ const retornarCardHTML = (producto) => {
     <div class="card-name">${producto.nombre}</div>
     <div class="card-price">$ ${producto.precio}</div>
     <div class="card-button">
-        <button class="button button-outline button-add" id="" title="Clic para agregar al carrito">+</button>
-    </div></div>`
+        <button type="button" class="button button-outline button-add" id=${producto.nombre} title="Clic para agregar al carrito">+</button>
+    </div></div>`//Problema: Los productos no contienen id.
 }
 
 const cargarProductos = (array) =>{
-    array.forEach(element => {
-        containerCards.innerHTML += retornarCardHTML(element)
+    array.forEach(producto => {
+        containerCards.innerHTML += retornarCardHTML(producto)
     });
 }
 
