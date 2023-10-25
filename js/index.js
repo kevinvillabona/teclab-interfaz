@@ -6,8 +6,8 @@ const retornarCardHTML = (producto) => {
     <div class="card-name">${producto.nombre}</div>
     <div class="card-price">$ ${producto.precio}</div>
     <div class="card-button">
-        <button type="button" class="button button-outline button-add" id=${producto.nombre} title="Clic para agregar al carrito">+</button>
-    </div></div>`//Problema: Los productos no contienen id.
+        <button type="button" class="button button-outline button-add" id=${producto.id} title="Clic para agregar al carrito">+</button>
+    </div></div>`
 }
 
 const cargarProductos = (array) =>{
@@ -16,4 +16,16 @@ const cargarProductos = (array) =>{
     });
 }
 
+//API2
+
+const activarClickEnBotones = () => {
+    const botonesAgregar = document.querySelectorAll('.button.button-outline.button-add');
+    for (const btn of botonesAgregar) {
+        btn.addEventListener('click', (e) => {
+            agregarAlCarrito(e.target.id);
+          });
+    }
+}
+
 cargarProductos(productos)
+activarClickEnBotones()
