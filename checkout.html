@@ -28,21 +28,29 @@
                         <th id="tablehead">Producto</th>
                         <th id="tablehead">Descripción</th>
                         <th id="tablehead">Importe</th>
-                        <th id="tablehead">Quitar</th>
+                        <!-- <th id="tablehead"></th> -->
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Aquí</td>
+                        <!-- <td>Aquí</td>
                         <td>verás</td>
                         <td>productos</td>
-                        <td><img src="images/icon-fruits-64.png" width="24px"></td>
+                        <td><img src="images/icon-fruits-64.png" width="24px"></td> -->
                     </tr>
                 </tbody>
+                <tfoot>
+                    <tr> 
+                        <td id="tablefooter">Total:</td> 
+                        <td></td> 
+                        <td id="precioTotal"></td> 
+                        <!-- <td></td>  -->
+                     </tr> 
+                </tfoot>
             </table>
         </section>
         <div class="centrar-div">
-            <button class="button" id="btnComprar">COMPRAR</button>
+            <button class="button" id="btnComprar" onclick="finalizarCompra()">COMPRAR</button>
         </div>
     </main>
 </body>

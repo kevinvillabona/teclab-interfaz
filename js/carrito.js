@@ -1,4 +1,3 @@
-
 const agregarAlCarrito = (frutaId) =>{
     if(frutaId > 0){
         const fruta = productos.find((producto) => producto.id === parseInt(frutaId))
@@ -6,6 +5,7 @@ const agregarAlCarrito = (frutaId) =>{
     }
     //console.table(carritoFrutas)
 }
+
 //API 3
 const almacenarCarrito = () => {
     if (carritoFrutas.length){

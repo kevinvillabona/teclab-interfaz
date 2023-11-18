@@ -1,3 +1,6 @@
+const productos = []
+const URL = 'js/productos.json'
+
 const containerCards = document.querySelector(".container")
 
 const retornarCardHTML = (producto) => {
@@ -14,6 +17,7 @@ const cargarProductos = (array) =>{
     array.forEach(producto => {
         containerCards.innerHTML += retornarCardHTML(producto)
     });
+    activarClickEnBotones();
 }
 
 //API2
@@ -28,5 +32,14 @@ const activarClickEnBotones = () => {
     }
 }
 
-cargarProductos(productos)
-activarClickEnBotones()
+
+//API3
+const obtenerProductos = () =>{
+    fetch(URL)
+    .then((response)=> response.json())
+    .then((data) => productos.push(...data))
+    .then(()=> cargarProductos(productos))
+}
+
+obtenerProductos()
+

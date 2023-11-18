@@ -168,12 +168,12 @@ em {
     width: 80%;
 }
 
-thead tr {
+thead tr, tfoot tr {
     background-color: darkmagenta;
     color: white;
 }
 
-#tablehead {
+#tablehead, #tablefooter {
     padding: 10px;
 }
 
