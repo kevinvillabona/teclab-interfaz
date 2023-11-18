@@ -23,6 +23,7 @@ const activarClickEnBotones = () => {
     for (const btn of botonesAgregar) {
         btn.addEventListener('click', (e) => {
             agregarAlCarrito(e.target.id);
+            almacenarCarrito(); //API 3
           });
     }
 }
